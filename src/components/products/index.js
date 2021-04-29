@@ -22,6 +22,7 @@ const Products = () => {
     updatedCart = cart.map(item => {
       if (item.sku === product.sku) {
         let updatedQuantity = item.quantity + 1
+        updated = 1
         //check inventory
         if (updatedQuantity > inventory[product.sku]) {
           alert(`only ${inventory[product.sku]} item(s) are remaining so you can not add more than ${inventory[product.sku]} item(s) into cart!`)
@@ -32,7 +33,6 @@ const Products = () => {
           alert(`you can not order more than ${product.purchaseQuantityLimitPerOrder} of this item!`)
           return item
         }
-        updated = 1
         //if all good update the quantity
         return { ...item, quantity: updatedQuantity }
       } else {
