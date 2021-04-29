@@ -17,7 +17,8 @@ const Cart = () => {
     }
 
     const addQuantity = (product) => {
-        let updatedCart = cart.map(item => {
+        let updatedCart = []
+        updatedCart = cart.map(item => {
             if (item.sku === product.sku) {
                 let updatedQuantity = item.quantity + 1
                 //check inventory
@@ -30,11 +31,11 @@ const Cart = () => {
                     alert(`you can not order more than ${product.purchaseQuantityLimitPerOrder} of this item!`)
                     return item
                 }
+                // updated = 1
                 //if all good update the quantity
                 return { ...item, quantity: updatedQuantity }
             } else {
-                console.log("in here", { ...product, quantity: 1 });
-                return { ...product, quantity: 1 }
+                return item
             }
         })
         storeCart(updatedCart)
@@ -51,7 +52,7 @@ const Cart = () => {
                 //if all good update the quantity
                 return { ...item, quantity: updatedQuantity }
             } else {
-                return { ...product, quantity: 1 }
+                return item
             }
         }).filter(Boolean)
         storeCart(updatedCart)

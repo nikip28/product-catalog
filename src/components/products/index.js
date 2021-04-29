@@ -17,31 +17,30 @@ const Products = () => {
   }
 
   const addToCart = (product) => {
-    console.log("product", product);
     let updatedCart = []
-    if (!cart.length) {
-      updatedCart.push({ ...product, quantity: 1 })
-    } else {
-      updatedCart = cart.map(item => {
-        if (item.sku === product.sku) {
-          let updatedQuantity = item.quantity + 1
-          //check inventory
-          if (updatedQuantity > inventory[product.sku]) {
-            alert(`only ${inventory[product.sku]} item(s) are remaining so you can not add more than ${inventory[product.sku]} item(s) into cart!`)
-            return item
-          }
-          //check purchase limit per order
-          if (updatedQuantity > product.purchaseQuantityLimitPerOrder) {
-            alert(`you can not order more than ${product.purchaseQuantityLimitPerOrder} of this item!`)
-            return item
-          }
-          //if all good update the quantity
-          return { ...item, quantity: updatedQuantity }
-        } else {
-          console.log("in here", { ...product, quantity: 1 });
-          return { ...product, quantity: 1 }
+    let updated = 0
+    updatedCart = cart.map(item => {
+      if (item.sku === product.sku) {
+        let updatedQuantity = item.quantity + 1
+        //check inventory
+        if (updatedQuantity > inventory[product.sku]) {
+          alert(`only ${inventory[product.sku]} item(s) are remaining so you can not add more than ${inventory[product.sku]} item(s) into cart!`)
+          return item
         }
-      })
+        //check purchase limit per order
+        if (updatedQuantity > product.purchaseQuantityLimitPerOrder) {
+          alert(`you can not order more than ${product.purchaseQuantityLimitPerOrder} of this item!`)
+          return item
+        }
+        updated = 1
+        //if all good update the quantity
+        return { ...item, quantity: updatedQuantity }
+      } else {
+        return item
+      }
+    })
+    if (!updated) {
+      updatedCart.push({ ...product, quantity: 1 })
     }
     storeCart(updatedCart)
   }
