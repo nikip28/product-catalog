@@ -65,11 +65,11 @@ const Cart = () => {
                     {cart.map(item =>
                         <Card title={item.name}>
                             <div className="details">
-                                <div className="details-left">
+                                <div>
                                     <p>Description: {item.description}</p>
                                     <p>Price: {item.price}</p>
                                 </div>
-                                <div className="details-right">
+                                <div className="detailsRight">
                                     <div className="actions">
                                         <Tooltip title="add">
                                             <Button type="primary" shape="circle" icon={<PlusOutlined />} onClick={() => addQuantity(item)} />

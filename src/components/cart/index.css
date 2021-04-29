@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 
-.details-right {
+.detailsRight {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
