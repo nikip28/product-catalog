@@ -57,7 +57,7 @@ const Products = () => {
           </Tooltip>}
       </div>
       {type === "table" ?
-        <Table columns={getColumns(addToCart)} dataSource={products} /> :
+        <Table rowKey="sku" columns={getColumns(addToCart)} dataSource={products} /> :
         <div>grid view</div>}
     </>
   );
