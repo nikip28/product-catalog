@@ -1,0 +1,19 @@
+.header{
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerText {
+    cursor: pointer;
+}
+
+.cartBadge {
+    color: white;
+    font-size: 30px; 
+}
+
+.badge {
+    margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "sku": "123456",
+        "name": "Bag",
+        "purchaseQuantityLimitPerOrder": 2,
+        "description": "Medium 21 L Backpack Campus 1 Slub Backpack  (Grey)",
+        "images": [
+            "https://rukminim1.flixcart.com/image/880/1056/klv7ekw0/backpack/n/m/j/campus-1-slub-backpack-bkpcmpslb0412-backpack-gear-original-imagyw6ftjqrejqz.jpeg?q=50",
+            "https://rukminim1.flixcart.com/image/880/1056/klv7ekw0/backpack/w/o/i/campus-1-slub-backpack-bkpcmpslb0412-backpack-gear-original-imagyw6fwnhshky5.jpeg?q=50"
+        ],
+        "price": "700"
+    },
+    {
+        "sku": "123450",
+        "name": "Lamp",
+        "purchaseQuantityLimitPerOrder": 3,
+        "description": "Rechargeable touch control Table Lamp",
+        "images": [
+            "https://rukminim1.flixcart.com/image/416/416/k5lcvbk0/table-lamp/q/c/p/rechargeable-touch-control-ssk-tl-7518l-syska-original-imafz44ha9hbvrr4.jpeg?q=70"
+        ],
+        "price": "900"
+    }
+]
